@@ -9,8 +9,8 @@
 // @website         https://akbal.dev
 // @icon            https://store.steampowered.com/favicon.ico
 
-// @updateURL       https://github.com/VoidlessSeven7/steam-in-library-remover/blob/master/script.js
-// @downloadURL     https://github.com/VoidlessSeven7/steam-in-library-remover/blob/master/script.js
+// @updateURL       https://github.com/VoidlessSeven7/steam-in-library-remover/raw/master/steam-little-toolkit.user.js
+// @downloadURL     https://github.com/VoidlessSeven7/steam-in-library-remover/raw/master/steam-little-toolkit.user.js
 // @supportURL      https://github.com/VoidlessSeven7/steam-in-library-remover/issues
 
 // @match           http*://store.steampowered.com/*

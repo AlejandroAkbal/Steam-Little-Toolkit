@@ -2,7 +2,7 @@
 // @name         Steam owned games remover
 // @homepage     https://github.com/VoidlessSeven7/steam-in-library-remover/
 // @namespace    http://tampermonkey.net/
-// @version      1.05
+// @version      1.10
 // @description  Removes from the store the games that you already own
 // @icon         http://store.steampowered.com/favicon.ico
 // @author       Alejandro Akbal
@@ -31,12 +31,12 @@
         /* Variable for checking if the current url is the updated game section
             "< 0" means that it ISN'T the section
             "> -1" means it is the section */
-        const urlContainsUpdated = window.location.href.indexOf("/updated/");
+        const urlContains = (query) => window.location.href.indexOf(`/${query}/`);
 
 
         /* ----- Category: Normal usage ----- */
 
-        if(urlContainsUpdated < 0) {
+        if(urlContains('updated') < 0 && urlContains('bundle') < 0 ) {
 
             if (settings.removeOwned === true) {
                 removeElements( document.querySelectorAll(".ds_owned") );
@@ -53,7 +53,7 @@
 
         /* ----- Category: Recently updated ----- */
 
-        if (urlContainsUpdated > -1) {
+        else if (urlContains('updated') > -1) {
 
                 if (settings.removeOwnedRecentlyUpdatedList === true) {
                     removeElements( document.querySelectorAll(".ds_owned") );

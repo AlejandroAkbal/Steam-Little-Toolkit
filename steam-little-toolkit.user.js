@@ -1,7 +1,6 @@
 // ==UserScript==
 
 // @name            Steam little toolkit
-// @namespace       http://tampermonkey.net/
 // @version         1.17
 // @author          Alejandro Akbal
 // @description     Little additions like removing owned games from the store and bypassing the external link filter

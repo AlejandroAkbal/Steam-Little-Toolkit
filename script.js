@@ -15,7 +15,7 @@
 // @supportURL      https://github.com/VoidlessSeven7/steam-in-library-remover/issues
 
 // @match           http*://store.steampowered.com/*
-// @include         /^https?://(?:www\.)?steamcommunity\.com/linkfilter/.*$/
+// @match           http*://steamcommunity.com/linkfilter/?url=*
 
 // @run-at          document-end
 // @grant           none
@@ -27,7 +27,7 @@
 
     // User Settings
     const settings = {
-        bypassFilter: true,
+        bypassLinkFilter: true,
         bypassAgeCheck: true,
         removeOwned: true,
         removeIgnored: false,
@@ -50,15 +50,9 @@
         /* ----- Category: Utilities ----- */
 
         // Bypass steam link filter
-        if (settings.bypassFilter === true) {
+        if (settings.bypassLinkFilter === true && urlContains('linkfilter') > -1) {
 
-            const url = window.location.href,
-                regex = /^https?:\/\/(?:www\.)?steamcommunity\.com\/linkfilter\/.+?=(.+)$/i, // This was implemented thanks to https://github.com/Jaex
-                match = url.match(regex);
-
-            if (match) {
-                window.location.href = match[1];
-            }
+            window.location = String(window.location).substr(43);
 
         }
 

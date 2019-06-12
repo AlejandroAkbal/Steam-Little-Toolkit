@@ -2,7 +2,7 @@
 
 // @name            Steam little toolkit
 // @namespace       http://tampermonkey.net/
-// @version         1.15
+// @version         1.17
 // @author          Alejandro Akbal
 // @description     Little additions like removing owned games from the store and bypassing the external link filter
 
@@ -28,24 +28,11 @@
     // User Settings
     const settings = {
         bypassFilter: true,
+        bypassAgeCheck: true,
         removeOwned: true,
         removeIgnored: false,
         removeOwnedRecentlyUpdatedList: false,
         removeIgnoredRecentlyUpdatedList: false
-    }
-
-    // Bypass the steam filter and go directly to the link
-    if (settings.bypassFilter === true) {
-
-        // This was implemented thanks to https://github.com/Jaex
-        const url = window.location.href,
-              regex = /^https?:\/\/(?:www\.)?steamcommunity\.com\/linkfilter\/.+?=(.+)$/i,
-              match = url.match(regex);
-
-        if (match) {
-            window.location.href = match[1];
-        }
-
     }
 
     // Functionality condensed into a single function
@@ -58,6 +45,35 @@
             "< 0" means that it ISN'T the section
             "> -1" means it is the section */
         const urlContains = (query) => window.location.href.indexOf(`/${query}/`);
+
+
+        /* ----- Category: Utilities ----- */
+
+        // Bypass steam link filter
+        if (settings.bypassFilter === true) {
+
+            const url = window.location.href,
+                regex = /^https?:\/\/(?:www\.)?steamcommunity\.com\/linkfilter\/.+?=(.+)$/i, // This was implemented thanks to https://github.com/Jaex
+                match = url.match(regex);
+
+            if (match) {
+                window.location.href = match[1];
+            }
+
+        }
+
+        // Bypass steam agecheck
+        if (settings.bypassAgeCheck === true && urlContains('agecheck') > -1) {
+
+            const formAgeYear = document.getElementById('ageYear');
+
+            if (formAgeYear) {
+                formAgeYear.value = 2000;
+            }
+
+            document.querySelector('.btnv6_blue_hoverfade.btn_medium').click();
+
+        } // End of Category: Utilities
 
 
         /* ----- Category: Normal usage ----- */

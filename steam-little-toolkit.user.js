@@ -110,6 +110,25 @@
 
     setInterval(start, 5000);
 
+    /* Start of CSS code injection
+    let htmlCodeBlock = document.createElement("div");
+    let cssCodeBlock = document.createElement("div");
+   
+    const htmlCode = ``;
+
+    const cssCode = `<style></style>`;
+    
+    htmlCodeBlock.innerHTML = htmlCode;
+    cssCodeBlock.innerHTML = cssCode;
+
+     End of CSS code injection */
+
+
+
+
+
+
+
 
 
 

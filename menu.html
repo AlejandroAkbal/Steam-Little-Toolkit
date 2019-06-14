@@ -12,6 +12,7 @@
         .slt-menu h2 {
             margin: 0px;
             padding: 0px;
+            -webkit-box-sizing: border-box;
             box-sizing: border-box;
             color: rgba(255, 255, 255, 0.8);
         }
@@ -22,14 +23,21 @@
 
             height: 50vh;
             width: 50vw;
-            margin: auto;
-            margin-top: 15vh;
 
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.95);
+
+            display: -webkit-box;
 
             display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
             flex-direction: column;
 
+            top: 25%;
+            bottom: 25%;
+            left: 25%;
+            right: 25%;
+            position: fixed;
             z-index: 696969;
         }
 
@@ -44,8 +52,12 @@
             padding-left: 1rem;
             padding-right: 1rem;
 
+            display: -webkit-box;
+
             display: flex;
+            -ms-flex-wrap: wrap;
             flex-wrap: wrap;
+            -webkit-box-pack: space-evenly;
             justify-content: space-evenly;
 
             overflow-x: hidden;
@@ -74,8 +86,37 @@
             white-space: nowrap;
         }
 
+        .slt-d-none {
+            display: none;
+        }
+
         .slt-d-inline-flex {
+            display: -webkit-inline-box;
             display: inline-flex;
+        }
+
+        .slt-menu-body>.slt-d-inline-flex {
+            margin-top: 10px;
+        }
+
+        /* For the toggler */
+
+        .slt-menu-icon-toggler {
+            position: fixed;
+            top: 25%;
+            right: -25px;
+            -webkit-transition: right 0.3s ease-in-out;
+            -o-transition: right 0.3s ease-in-out;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .slt-menu-icon-toggler:hover {
+            right: 0px;
+        }
+
+        .slt-menu-icon-toggler img {
+            max-height: 64px;
+            max-width: 64px;
         }
 
         /* Switches */
@@ -87,7 +128,6 @@
             height: 20px;
 
             /* Fix for this layout */
-            margin-top: 16px;
             margin-left: 8px;
         }
 
@@ -106,6 +146,7 @@
             bottom: 0;
             background-color: rgba(204, 204, 204, 0.8);
             -webkit-transition: .4s;
+            -o-transition: .4s;
             transition: .4s;
 
             border-radius: 34px;
@@ -120,6 +161,7 @@
             bottom: 4px;
             background-color: rgb(255, 255, 255);
             -webkit-transition: .4s;
+            -o-transition: .4s;
             transition: .4s;
 
             border-radius: 50%;
@@ -130,21 +172,31 @@
         }
 
         input:focus+.slt-slider {
+            -webkit-box-shadow: 0 0 1px rgba(33, 149, 243, 0.8);
             box-shadow: 0 0 1px rgba(33, 149, 243, 0.8);
         }
 
         input:checked+.slt-slider:before {
             -webkit-transform: translateX(29px);
-            -ms-transform: translateX(29px);
             transform: translateX(29px);
         }
     </style>
 
 </head>
 
-<body>
+<body style="height: 500vh;">
 
-    <div class="slt-menu">
+    <!-- Menu toggler -->
+
+    <div class="slt-menu-icon-toggler slt-Menu-Toggler">
+
+        <img src="https://store.steampowered.com/favicon.ico" alt="Steam Little Toolkit's menu toggler">
+
+    </div>
+
+    <!-- Menu -->
+
+    <div id="slt-menu" class="slt-menu slt-d-none">
 
         <div class="slt-menu-header">
             <h2 class="slt-text-center">Steam Little Toolkit Settings</h2>
@@ -156,8 +208,8 @@
                 <p>Bypass Link Filter</p>
 
                 <label class="slt-switch">
-                    <input type="checkbox" onclick="alert('lol')">
-                    <span class="slt-slider" ></span>
+                    <input type="checkbox">
+                    <span class="slt-slider"></span>
                 </label>
 
             </div>

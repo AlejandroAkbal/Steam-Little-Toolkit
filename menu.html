@@ -66,6 +66,7 @@
 
         .slt-menu-footer {
             margin-top: auto;
+            padding-bottom: 5px;
         }
 
         .slt-menu a {
@@ -74,12 +75,20 @@
 
         /* Generic Usage */
 
+        .slt-blur {
+            filter: blur(5px);
+        }
+
         .slt-text-center {
             text-align: center;
         }
 
         .slt-overflow-hidden {
             overflow: hidden;
+        }
+
+        .slt-overflow-x-hidden {
+            overflow-x: hidden;
         }
 
         .slt-text-nowrap {
@@ -108,15 +117,24 @@
             -webkit-transition: right 0.3s ease-in-out;
             -o-transition: right 0.3s ease-in-out;
             transition: right 0.3s ease-in-out;
+
+            z-index: 696969;
         }
 
         .slt-menu-icon-toggler:hover {
-            right: 0px;
+            right: 10px;
         }
 
         .slt-menu-icon-toggler img {
             max-height: 64px;
             max-width: 64px;
+        }
+
+        /* Steam blur transition */
+
+        .responsive_page_frame.with_header {
+            transition: filter .3s linear;
+            -webkit-transition: .3s -webkit-filter linear;
         }
 
         /* Switches */
@@ -204,65 +222,85 @@
 
         <div class="slt-menu-body">
 
+            <!-- Toggle -->
+            <div class="slt-d-inline-flex">
+                    <p>Use menu?</p>
+    
+                    <label class="slt-switch">
+                        <input id="sltuseMenuSetting" type="checkbox">
+                        <span class="slt-slider"></span>
+                    </label>
+                </div>
+
+            <!-- Toggle -->
             <div class="slt-d-inline-flex">
                 <p>Bypass Link Filter</p>
 
                 <label class="slt-switch">
-                    <input type="checkbox">
+                    <input id="sltbypassLinkFilterSetting" type="checkbox">
                     <span class="slt-slider"></span>
                 </label>
-
             </div>
 
+            <!-- Toggle -->
             <div class="slt-d-inline-flex">
                 <p>Bypass Age Check</p>
 
                 <label class="slt-switch">
-                    <input type="checkbox">
+                    <input id="sltbypassAgeCheckSetting" type="checkbox">
                     <span class="slt-slider"></span>
                 </label>
-
             </div>
 
+            <!-- Toggle -->
             <div class="slt-d-inline-flex">
                 <p>Remove Owned Games</p>
 
                 <label class="slt-switch">
-                    <input type="checkbox">
+                    <input id="sltremoveOwnedSetting" type="checkbox">
                     <span class="slt-slider"></span>
                 </label>
-
             </div>
 
+            <!-- Toggle -->
             <div class="slt-d-inline-flex">
                 <p>Remove Ignored Games</p>
 
                 <label class="slt-switch">
-                    <input type="checkbox">
+                    <input id="sltremoveIgnoredSetting" type="checkbox">
                     <span class="slt-slider"></span>
                 </label>
-
             </div>
 
+            <!-- Toggle -->
             <div class="slt-d-inline-flex">
                 <p>Remove Owned on <em>Recently Updated</em></p>
 
                 <label class="slt-switch">
-                    <input type="checkbox">
+                    <input id="sltremoveOwnedRecentlyUpdatedListSetting" type="checkbox">
                     <span class="slt-slider"></span>
                 </label>
-
             </div>
 
+            <!-- Toggle -->
             <div class="slt-d-inline-flex">
                 <p>Remove Ignored on <em>Recently Updated</em></p>
 
                 <label class="slt-switch">
-                    <input type="checkbox">
+                    <input id="sltremoveIgnoredRecentlyUpdatedListSetting" type="checkbox">
                     <span class="slt-slider"></span>
                 </label>
-
             </div>
+
+            <!-- Toggle -->
+            <div class="slt-d-inline-flex">
+                    <p>Remove Live Streams</p>
+    
+                    <label class="slt-switch">
+                        <input id="sltremoveLiveStreamsSetting" type="checkbox">
+                        <span class="slt-slider"></span>
+                    </label>
+                </div>
 
         </div>
 

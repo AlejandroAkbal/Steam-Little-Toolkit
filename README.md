@@ -9,6 +9,7 @@ Menu toggled
 ![Menu Toggled](images/Example_Two.jpg)
 
 You can also edit the settings manually
+
 ![Manual settings](images/Manual_Settings.jpg)
 
 ## List of features

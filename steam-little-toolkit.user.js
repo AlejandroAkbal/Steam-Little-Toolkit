@@ -7,7 +7,7 @@
 // @copyright       2019, VoidlessSeven7, https://akbal.dev
 // @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 
-// @homepageURL     https://github.com/VoidlessSeven7/steam-little-toolkit/
+// @homepageURL     github.com/VoidlessSeven7/steam-little-toolkit/
 // @website         https://akbal.dev
 // @icon            https://store.steampowered.com/favicon.ico
 

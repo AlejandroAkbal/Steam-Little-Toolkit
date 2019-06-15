@@ -5,6 +5,7 @@
 // @author          VoidlessSeven7
 // @description     Tampermonkey script for the steam store that makes your experience better, works best with the SteamDB Extension, find all the utilites by reading the settings!
 // @copyright       2019, VoidlessSeven7, https://akbal.dev
+// @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 
 // @source          https://github.com/VoidlessSeven7/steam-little-toolkit/
 // @website         https://akbal.dev

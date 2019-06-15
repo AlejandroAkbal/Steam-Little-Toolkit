@@ -1,6 +1,9 @@
 # Steam little toolkit
 Tampermonkey script for the steam store that makes your experience better, works best with the [SteamDB Extension](https://steamdb.info/extension/)
 
+**Download the script [directly](https://github.com/VoidlessSeven7/steam-little-toolkit/raw/master/steam-little-toolkit.user.js), or from [GreasyFork](https://greasyfork.org/en/scripts/386196-steam-little-toolkit)**
+
+
 ## Images
 The menu toggler on the right
 ![Menu Toggler](images/Example_One.jpg)

@@ -1,20 +1,26 @@
 // ==UserScript==
 
 // @name            Steam little toolkit
-// @version         1.20
-// @author          Alejandro Akbal
-// @description     Little additions like removing owned games from the store and bypassing the external link filter
+// @version         1.21
+// @author          VoidlessSeven7
+// @description     Tampermonkey script for the steam store that makes your experience better, works best with the SteamDB Extension, find all the utilites by reading the settings!
+// @copyright       2019, VoidlessSeven7, https://akbal.dev
 
-// @source          https://github.com/VoidlessSeven7/steam-in-library-remover/
+// @source          https://github.com/VoidlessSeven7/steam-little-toolkit/
 // @website         https://akbal.dev
 // @icon            https://store.steampowered.com/favicon.ico
 
-// @updateURL       https://github.com/VoidlessSeven7/steam-in-library-remover/raw/master/steam-little-toolkit.user.js
-// @downloadURL     https://github.com/VoidlessSeven7/steam-in-library-remover/raw/master/steam-little-toolkit.user.js
-// @supportURL      https://github.com/VoidlessSeven7/steam-in-library-remover/issues
+// @updateURL       https://github.com/VoidlessSeven7/steam-little-toolkit/raw/master/steam-little-toolkit.user.js
+// @downloadURL     https://github.com/VoidlessSeven7/steam-little-toolkit/raw/master/steam-little-toolkit.user.js
+// @supportURL      https://github.com/VoidlessSeven7/steam-little-toolkit/issues
+// @contributionURL https://paypal.me/Alejandrorr7
 
 // @match           http*://store.steampowered.com/*
 // @match           http*://steamcommunity.com/linkfilter/?url=*
+// @exclude         http*://store.steampowered.com/checkout/*
+// @exclude         http*://store.steampowered.com/cart/*
+// @exclude         http*://store.steampowered.com/login/*
+// @exclude         http*://store.steampowered.com/join/*
 
 // @run-at          document-end
 // @grant           none

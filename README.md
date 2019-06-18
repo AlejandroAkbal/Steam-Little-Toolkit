@@ -28,3 +28,4 @@ You can also edit the settings manually
 - [ ] Remove games when an event happens, not every **x** seconds
 - [ ] Fix search so that it doesn't delete games that you own while searching
 - [ ] Make the graphical menu actually work
+- [ ] Fix the graphical menu so it doesn't break the steam store slides 

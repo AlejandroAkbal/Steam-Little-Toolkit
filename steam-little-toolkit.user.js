@@ -7,6 +7,7 @@
 // @copyright       2019, VoidlessSeven7, (https://akbal.dev)
 // @license         GPL-3.0-or-later; http://www.gnu.org/licenses/gpl-3.0.txt
 
+// @namespace       https://greasyfork.org/users/309931
 // @homepageURL     https://github.com/VoidlessSeven7/steam-little-toolkit/
 // @website         https://akbal.dev
 // @icon            https://store.steampowered.com/favicon.ico
@@ -24,7 +25,8 @@
 // @exclude         http*://store.steampowered.com/join/*
 
 // @run-at          document-end
-// @grant           none
+// @grant           GM_setValue
+// @grant           GM_getValue
 
 // ==/UserScript==
 
@@ -158,12 +160,32 @@
 
         // Toggle the checklist for the menu
 
-        Object.entries(settings).forEach(([setting, value]) => {
-            //console.log(setting + ' = ' + value);
+        Object.entries(settings).forEach(([settingName, value]) => {
+
+            let idSettingName = `slt${settingName}Setting`;
 
             if (value === true) {
-                document.getElementById(`slt${setting}Setting`).checked = true;
+                document.getElementById(idSettingName).checked = true;
             }
+
+            document.getElementById(idSettingName).addEventListener('change', function () {
+
+                if (this.checked) {
+
+                    settings[settingName] = true;
+                    alert(`${settings[settingName]}: This doesnt work since I dont know how to set the variables in tampermonkey`);
+
+                } else {
+
+                    settings[settingName] = false;
+                    alert(`${settings[settingName]}: This doesnt work since I dont know how to set the variables in tampermonkey`);
+
+                }
+            });
+
+
+
+
         }); // End of Toggle the checklist for the menu
 
     } // End of Category: Section Menu
